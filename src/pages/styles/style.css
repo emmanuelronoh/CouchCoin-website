@@ -1,3 +1,4 @@
+/* General Styles */
 @font-face {
   font-family: "Roboto-Regular";
   src: url("../fonts/Roboto-Regular.ttf") format("truetype");
@@ -18,8 +19,6 @@
   --pinkHoverColor: rgb(215, 2, 137);
 }
 
-/* Start project */
-
 * {
   padding: 0;
   margin: 0;
@@ -29,275 +28,59 @@
   scroll-behavior: smooth;
 }
 
-body {
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Roboto-Regular", sans-serif;
   color: var(--mainBlack);
-  font-family: "Roboto-Regular", "sans-serif";
 }
 
-.swiper,
-.description-cards {
-  border-bottom: 1px solid var(--mainGray);
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-
-/*--- Navbar ---*/
-
-.nav {
-  position: relative; /* Ensures it stays in normal document flow */
-  display: block; /* Make sure it's visible */
-  margin-top: 4750px; /* Push it below the fixed navbar */
-  width: 100%; /* Ensure full width */
-  box-shadow: 0 0 4px #4d525b14, 0 2px 4px #4d525b1f;
-  background-color: #fff;
-  z-index: 999; /* Ensure it's above other elements */
-  padding: 10px 20px; /* Adjust padding if needed */
+/* Home Section */
+.home {
+  padding: 20px 0;
 }
 
-
-
-
-.nav .nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 0 15px 16px;
-}
-
-.nav .nav-content a {
-  color: inherit;
-  transition: var(--transition);
-}
-
-.nav .nav-content a:hover {
-  color: var(--mainBlue);
-}
-
-.nav-menu,
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.nav-menu li,
-.nav-links li {
-  margin-right: 30px;
-}
-
-.nav-links .nav-links_item:nth-child(3) a {
-  background-color: var(--mainPink);
-  color: #fff;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 3px;
-  font-size: 14px;
-}
-
-.nav-links .nav-links_item:nth-child(3) a:hover {
-  background-color: var(--pinkHoverColor);
-}
-
-.nav-logo img {
-  width: 130px;
-}
-
-/*--- Header Navbar ---*/
-
-/* Ensure the second header appears below the first fixed navbar */
-.header-navbar {
-  background-color: var(--mainBlack);
-  position: relative;
-  margin-top: 60px; /* Ensure it starts below .navbar */
-  z-index: 999; /* Ensure it's below .navbar */
-  top: 60px; /* Push it down */
-}
-
-
-
-.header-navbar_content {
-  min-width: 405px;
-}
-
-.header-navbar_menu {
-  display: flex;
-}
-
-.header-navbar_menu .header-navbar_item {
-  padding: 16px;
-}
-
-.header-navbar_menu .header-navbar_item:hover {
-  background-color: #323a45;
-}
-
-.header-navbar_menu .header-navbar_item a {
-  color: var(--mainWhite);
-  font-size: 14px;
-}
-
-/*--- Heder Container ---*/
-
-.header-container {
-  min-height: calc(100vh - 112px);
-  background: url("../images/header-background.jpg") no-repeat center/cover;
-  background-blend-mode: multiply;
-  background-color: #828282;
-}
-
-.header-content {
-  color: var(--mainWhite);
-  padding: 80px 15px;
-}
-
-.header-title {
-  font-size: 48px;
-  font-family: "Roboto-Bold" sans-serif;
-  margin: 0;
-  max-width: 535px;
-}
-
-.header-desc_menu {
-  margin: 25px 40px 40px 40px;
-  line-height: 28px;
-}
-
-.header-desc_menu .header-desc_item {
-  list-style-type: disc !important;
-  font-size: 18px;
-}
-
-.header-btn_container {
-  display: flex;
-}
-
-.header-btn_container a,
-.description-btn,
-.information-btn {
-  font-size: 20px;
-  font-family: "Roboto-Bold" sans-serif;
-  font-weight: bold;
-  color: var(--mainWhite) !important;
-  margin: 5px;
-  padding: 16px 25px;
-  border-radius: 3px;
-  transition: var(--transition);
-}
-
-.header-btn:nth-child(1),
-.description-btn,
-.information-btn {
-  background-color: #22c55e;
-}
-
-.header-btn:nth-child(1):hover,
-.description-btn:hover,
-.information-btn:hover {
-  background-color: #22c55e;
-}
-
-.header-btn:nth-child(2) {
-  border: 1px solid var(--mainWhite);
-  background-color: rgba(200, 200, 200, 0.2);
-}
-
-.header-btn:nth-child(2):hover {
-  background-color: rgba(200, 200, 200, 0.5);
-}
-
-.header-navbar_item.dropdown {
-  position: relative;
-}
-
-.header-navbar_item.dropdown .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #0e1724;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  z-index: 1000;
-  
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic columns */
-  grid-auto-rows: auto;
-  column-gap: 20px;
-}
-
-.header-navbar_item.dropdown .dropdown-menu li {
-  padding: 5px;
-  white-space: nowrap;
-}
-
-/* Force every column to have only 6 items */
-.header-navbar_item.dropdown .dropdown-menu li:nth-child(6n + 1) {
-  grid-column-start: auto;
-}
-
-
-.header-navbar_item.dropdown:hover .dropdown-menu,
-.header-navbar_item.dropdown .dropdown-menu.show {
-  display: block;
-}
-
-.dropdown-menu li {
-  margin: 5px 0;
-}
-
-.dropdown-menu li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: normal;
-}
-
-.dropdown-menu li a:hover {
-  color: #0073e6;
-}
-
-/*--- Brands Section ---*/
-
+/* Brands Section */
 .brands {
-  padding: 20px;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .brands p {
-  text-align: center;
   color: #4d525b;
-  display: none;
+  margin-top: 10px;
 }
 
 .brands-content {
-  padding: 32px 20px;
-  border-bottom: 1px solid var(--mainGray);
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
-}
-
-.brands-content::before {
-  content: "As used by";
-  color: #4d525b;
-  font-size: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .brands-content img {
   height: 30px;
 }
 
-/* Swiper slider styles */
-
 .swiper {
-  max-width: 600px;
-  display: none;
-  padding: 32px 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -305,330 +88,238 @@ body {
   height: 25px;
 }
 
-.swiper-button-next::after {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 25px;
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--mainBlack);
 }
 
-.swiper-button-prev::after {
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 25px;
-}
-
-/*--- Description sections ---*/
-
+/* Description Sections */
 .description {
-  padding: 0 25px;
+  padding: 40px 0;
 }
 
 .description-title {
   font-size: 48px;
-  margin: 80px 0;
-}
-
-.description-paragraph {
-  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .description-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-bottom: 90px;
+  gap: 20px;
 }
 
 .description-card {
-  width: 281.5px;
-}
-
-.user-card {
-  transition: var(--transition);
-  cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.user-card:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.filters {
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 55%;
-  flex-wrap: wrap;
-}
-
-.filters p {
-  color: #4d525b;
-}
-
-.filter {
-  cursor: pointer;
-  font-size: 18px;
-  transition: var(--transition);
-  padding: 8px 10px;
-  border-radius: 8px;
-  background-color: var(--mainPink);
-  color: var(--mainWhite);
-}
-
-.filter:hover {
-  background-color: transparent;
-  color: var(--mainBlue);
+  background: var(--mainWhite);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 20px);
+  text-align: center;
 }
 
 .description-card_header {
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .description-card_header img {
-  width: 64px;
-  height: 64px;
+  width: 90px;
+  height: 90px;
   margin-right: 15px;
-}
-
-.description-card_header .user-image {
-  border-radius: 100%;
-  width: 64px; height: 64px;
 }
 
 .description-card_header h3 {
   font-size: 24px;
+  margin: 0;
 }
 
-.description-body p,
-.user-ability {
+.description-body p {
   font-size: 18px;
-  line-height: 1.8; /* Improves readability */
-  margin: 0 10px;
-  font-weight: 500; /* Slightly bold for better visibility */
-  color: #333; /* Dark gray for better contrast */
-  text-align: justify; /* Ensures a clean paragraph alignment */
-  letter-spacing: 0.5px; /* Enhances text appearance */
-  padding: 5px 15px; /* Adds some breathing space */
-  border-left: 4px solid #4CAF50; /* Adds a stylish left border */
-  background: #f9f9f9; /* Soft background for contrast */
-  border-radius: 8px; /* Rounded edges for a modern look */
+  line-height: 1.6;
+  color: #4d525b;
 }
 
-
-.description-body .user-ability {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
-  background-color: #0de840;
-  width: fit-content;
-  border-radius: 14px;
-  padding: 0 8px;
-  color: var(--mainWhite);
-}
-
-.product-title {
-  margin: 80px 0 40px 0;
-}
-
-.products > .description-card {
-  margin-top: 50px;
-  overflow: hidden;
-  width: fit-content;
-  height: fit-content;
+/* Products Section */
+.products .description-card {
+  width: calc(33.33% - 20px);
 }
 
 .product-header {
-  margin-bottom: 20px;
-  justify-content: center;
-  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .product-image {
-  width: 265px !important;
-  height: 207px !important;
-  cursor: pointer;
-}
-
-.product-header:hover {
-  transform: scale(1.2);
+  width: 100%;
+  height: auto;
+  transition: var(--transition);
+  display: block;
 }
 
 .product-header:hover .product-image {
-  filter: brightness(50%);
-}
-
-.product-image:hover ~ .product-button {
-  display: block;
-}
-
-.product-button:hover {
-  display: block;
+  transform: scale(1.1);
 }
 
 .product-button {
   position: absolute;
-  left: 50px;
-  cursor: pointer;
-  border: 2px solid var(--mainWhite);
-  padding: 10px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--mainPink);
   color: var(--mainWhite);
-  font: 18px "Roboto-Bold";
-  display: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: var(--transition);
 }
 
-.product-button:hover {
-  background-color: rgba(200, 200, 200, 0.5);
+.product-header:hover .product-button {
+  opacity: 1;
 }
 
 .product-info {
-  font-family: "Roboto-Bold", sans-serif;
-  font-size: 24px !important;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-.product-info,
-.product-image {
-  margin: 0 !important;
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  margin-top: 40px;
 }
 
 .description-btn {
-  margin: 70px auto !important;
-  width: 222.428px;
-  height: 55px;
+  background: var(--mainPink);
+  color: var(--mainWhite);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Information asides */
+.description-btn:hover {
+  background: var(--pinkHoverColor);
+}
 
+.cta-text {
+  font-size: 18px;
+  color: #4d525b;
+  margin-top: 10px;
+}
+
+/* Information Section */
 .information {
   display: flex;
-  height: 90vh;
-  color: var(--mainWhite);
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
+.left-section,
+.right-section {
+  width: 48%;
+  padding: 40px;
+  border-radius: 10px;
+  color: var(--mainWhite);
+  background-size: cover;
+  background-position: center;
+}
+
+.left-section {
+  background-image: url("../images/api-upsell-v3.jpg");
+}
+
+.right-section {
+  background-image: url("../images/enterprise-upsell-v3.jpg");
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Roboto-Regular", sans-serif;
+  color: var(--mainBlack);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+
 .information-title {
-  font: 32px "Roboto-Bold";
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .information-desc {
-  font: 48px "Roboto-Bold";
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
 .information-paragraph {
   font-size: 20px;
-  margin-bottom: 35px;
-  line-height: 28px;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .information-btn {
-  font-size: 14px;
-  padding: 8px 14px;
-  margin: 0;
-}
-
-.left-section {
-  background: url("../images/api-upsell-v3.jpg") no-repeat center/cover;
-  width: 50%;
-  display: flex;
-  align-items: center;
-}
-
-.left-section_content {
-  padding-left: 195px;
-}
-
-.right-section {
-  background: url("../images/enterprise-upsell-v3.jpg") no-repeat center/cover;
-  width: 50%;
-  display: flex;
-  align-items: center;
-}
-
-.right-section_content {
-  padding-left: 40px;
-}
-
-
-/* Dropdown Styling */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  list-style: none;
-  padding: 10px 0;
-  min-width: 200px;
-  top: 100%;
-  left: 0;
-  z-index: 999;
-}
-
-.dropdown-menu li {
-  padding: 10px 15px;
-}
-
-.dropdown-menu li a {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Arrow Rotation */
-.arrow {
-  transition: transform 0.3s ease-in-out;
-  display: inline-block;
-}
-
-.dropdown:hover .arrow {
-  transform: rotate(180deg);
-}
-
-.nav-link_button {
-  background-color: #22c55e;
-  color: white;
-  padding: 10px 16px;
+  background: var(--mainPink);
+  color: var(--mainWhite);
+  padding: 10px 20px;
   border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.nav-link_button:hover {
-  background-color: #1eab55;
+.information-btn:hover {
+  background: var(--pinkHoverColor);
 }
 
-@keyframes hide {
-  0% {
-    transform: scale(1);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .description-card,
+  .products .description-card {
+    width: calc(50% - 20px);
   }
-  100% {
-    transform: scale(0);
-    width: 0;
-    height: 0;
-    margin: 0;
+
+  .information {
+    flex-direction: column;
   }
-}
-@keyframes show {
-  0% {
-    transform: scale(0);
-    width: 0;
-    height: 0;
-    margin: 0;
-  }
-  100% {
-    transform: scale(1);
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
+@media (max-width: 480px) {
+  .description-card,
+  .products .description-card {
+    width: 100%;
+  }
+
+  .description-title {
+    font-size: 36px;
+  }
+
+  .information-title {
+    font-size: 24px;
+  }
+
+  .information-desc {
+    font-size: 36px;
+  }
+}

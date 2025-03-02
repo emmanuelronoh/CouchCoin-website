@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Adjust body to prevent navbar overlap */
+main {
+  margin-top: 80px; /* Adjust this value based on navbar height */
+}
+
+/* Hero Section */
+.hero {
+  background-color: #22c55e;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.hero .btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #1e3a8a;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.feature-card p {
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features {
+    padding: 40px 15px;
+  }
+
+  .feature-card {
+    padding: 16px;
+  }
+
+  .freelancers {
+    padding: 40px 15px;
+  }
+
+  .freelancers h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .freelancers h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Freelancer Showcase */
+.freelancers {
+  background-color: #dbeafe;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.freelancers h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.freelancers p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.freelancers .btn {
+  padding: 12px 24px;
+  background-color: #0e1724;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.freelancers .btn:hover {
+  background-color: #22c55e;
+}
+
+p {
+  all: unset; /* Removes all inherited and default styles */
+}

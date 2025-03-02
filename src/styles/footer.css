@@ -1,4 +1,14 @@
 /*--- Footer ---*/
+:root {
+  --mainPink: #f20091;
+  --mainWhite: #f7f7f7;
+  --mainBlack: #0e1724;
+  --mainGray: #bec0c2;
+  --mainBlue: #007fed;
+  --transition: all 0.2s;
+  --pinkHoverColor: rgb(215, 2, 137);
+}
+
 .footer {
     background-color: var(--mainBlack);
     padding: 20px;
@@ -12,6 +22,7 @@
     border-bottom: 0.5px solid #bec0c233;
   }
   
+
   .footer-column {
     display: flex;
     flex-direction: column;
